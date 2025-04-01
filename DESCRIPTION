@@ -1,0 +1,42 @@
+Package: mlr3finance
+Title: mlr3 for finance applications
+Version: 0.1
+Authors@R: c(
+    person("Mislav", "Sagovac", , "mislav.sagovac@contetnio.com", role = c("aut", "cre"))
+  )
+Description: Extends the mlr3 machine learning framework with
+    resamplings and pipelines  suited for finance applications.
+License: LGPL-3
+Depends:
+    mlr3 (>= 0.12.0),
+    R (>= 3.5.0)
+Imports:
+    checkmate,
+    data.table,
+    mlr3misc (>= 0.11.0),
+    paradox,
+    R6,
+    utils
+Suggests:
+    bbotk,
+    here,
+    knitr,
+    lgr,
+    mlr3filters (>= 0.7.0.9000),
+    mlr3pipelines,
+    mlr3tuning,
+    rmarkdown
+Encoding: UTF-8
+LazyData: true
+NeedsCompilation: no
+Roxygen: list(markdown = TRUE, r6 = TRUE)
+RoxygenNote: 7.3.2
+Collate: 
+    'zzz.R'
+    'PipeOpDropCorr.R'
+    'PipeOpDropNA.R'
+    'PipeOpDropNACol.R'
+    'aaa.R'
+    'ResamplingGapCV.R'
+    'ResamplingHoldoutGapFix.R'
+    'ResamplingHoldoutGapRatio.R'
