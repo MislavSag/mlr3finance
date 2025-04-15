@@ -25,6 +25,7 @@ PipeOpUniform = R6::R6Class(
     #'   List of hyperparameter settings. Default is `list()`.
     initialize = function(id = "uniformization", param_vals = list()) {
       ps = ps(na.rm = p_lgl(default = TRUE, tags = "uniformize"))
+      ps$values = list(na.rm = TRUE)
       super$initialize(
         id = id,
         param_set = ps,
@@ -130,6 +131,13 @@ PipeOpUniform = R6::R6Class(
     }
   )
 )
+
+# task_ = tsk("mtcars")
+# pipe = PipeOpUniform$new()
+# pipe$param_set
+# task_$data()
+# y = pipe$train(list(task_))
+# y$output$data()
 
 #' @include zzz.R
 register_po("uniform", PipeOpUniform)

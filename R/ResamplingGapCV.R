@@ -1,6 +1,26 @@
 #' @title Rolling and Expanding Gap Cross Validation
-#'
 #' @name mlr_resamplings_gap_cv
+#'
+#' @description
+#' Creates a rolling or expanding gap cross-validation resampling strategy.
+#' This resampling strategy is designed for time series data, where the training set is defined by an initial window,
+#' a gap, and a horizon. The gap is the number of observations skipped between the training and test sets.
+#' The horizon is the number of observations in the test set.
+#' If a group column is defined in the task (e.g. month), then the initial window, gap, and horizon are applied on the unique groups,
+#' and the groups are subsequently mapped back to the row indices.
+#'
+#' @section Parameters:
+#' The parameters are:
+#' * `initial_window` :: `integer(1)`\cr
+#'  The size of the initial training window. Default is `10`.
+#'  * `horizon` :: `integer(1)`\cr
+#'  The size of the test set (horizon). Default is `5`.
+#'  * `gap` :: `integer(1)`\cr
+#'  The number of observations to skip between the training and test sets. Default is `0`.
+#'  * `step` :: `integer(1)`\cr
+#'  The number of observations to slide the training window forward for each fold. Default is `1`.
+#'  * `rolling` :: `logical(1)`\cr
+#'  Whether to use a rolling (fixed-size) window or an expanding window. Default is `FALSE`.
 #'
 #' @export
 ResamplingGapCV = R6::R6Class(

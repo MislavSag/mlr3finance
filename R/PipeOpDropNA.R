@@ -42,4 +42,4 @@ PipeOpDropNA = R6::R6Class(
 )
 
 #' @include zzz.R
-register_po("drop.na", PipeOpDropNA)
+register_po("dropna", PipeOpDropNA)

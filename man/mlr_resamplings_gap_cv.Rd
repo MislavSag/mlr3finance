@@ -5,10 +5,30 @@
 \alias{ResamplingGapCV}
 \title{Rolling and Expanding Gap Cross Validation}
 \description{
-Rolling and Expanding Gap Cross Validation
-
-Rolling and Expanding Gap Cross Validation
+Creates a rolling or expanding gap cross-validation resampling strategy.
+This resampling strategy is designed for time series data, where the training set is defined by an initial window,
+a gap, and a horizon. The gap is the number of observations skipped between the training and test sets.
+The horizon is the number of observations in the test set.
+If a group column is defined in the task (e.g. month), then the initial window, gap, and horizon are applied on the unique groups,
+and the groups are subsequently mapped back to the row indices.
 }
+\section{Parameters}{
+
+The parameters are:
+\itemize{
+\item \code{initial_window} :: \code{integer(1)}\cr
+The size of the initial training window. Default is \code{10}.
+\item \code{horizon} :: \code{integer(1)}\cr
+The size of the test set (horizon). Default is \code{5}.
+\item \code{gap} :: \code{integer(1)}\cr
+The number of observations to skip between the training and test sets. Default is \code{0}.
+\item \code{step} :: \code{integer(1)}\cr
+The number of observations to slide the training window forward for each fold. Default is \code{1}.
+\item \code{rolling} :: \code{logical(1)}\cr
+Whether to use a rolling (fixed-size) window or an expanding window. Default is \code{FALSE}.
+}
+}
+
 \section{Super class}{
 \code{\link[mlr3:Resampling]{mlr3::Resampling}} -> \code{ResamplingGapCV}
 }

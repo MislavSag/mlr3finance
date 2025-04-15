@@ -32,10 +32,14 @@ NeedsCompilation: no
 Roxygen: list(markdown = TRUE, r6 = TRUE)
 RoxygenNote: 7.3.2
 Collate: 
+    'FinAutoMLBase.R'
     'zzz.R'
     'PipeOpDropCorr.R'
+    'PipeOpDropInfCol.R'
     'PipeOpDropNA.R'
     'PipeOpDropNACol.R'
+    'PipeOpFilterRegrTarget.R'
+    'PipeOpImputeNalocf.R'
     'PipeOpPCAExplained.R'
     'PipeOpUniform.R'
     'PipeOpWinsorize.R'
@@ -43,3 +47,4 @@ Collate:
     'ResamplingGapCV.R'
     'ResamplingHoldoutGapFix.R'
     'ResamplingHoldoutGapRatio.R'
+    'test.R'
